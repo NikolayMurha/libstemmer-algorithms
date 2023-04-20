@@ -1,0 +1,341 @@
+stringescapes {}
+
+externals ( stem )
+
+stringdef a '{U+0430}'
+stringdef b '{U+0431}'
+stringdef v '{U+0432}'
+stringdef g '{U+0433}'
+stringdef d '{U+0434}'
+stringdef e '{U+0435}'
+stringdef yo '{U+0451}'
+stringdef zh '{U+0436}'
+stringdef z '{U+0437}'
+stringdef i '{U+0438}'
+stringdef yi '{U+0439}'
+stringdef k '{U+043A}'
+stringdef l '{U+043B}'
+stringdef m '{U+043C}'
+stringdef n '{U+043D}'
+stringdef o '{U+043E}'
+stringdef p '{U+043F}'
+stringdef r '{U+0440}'
+stringdef s '{U+0441}'
+stringdef t '{U+0442}'
+stringdef u '{U+0443}'
+stringdef f '{U+0444}'
+stringdef kh '{U+0445}'
+stringdef ts '{U+0446}'
+stringdef ch '{U+0447}'
+stringdef sh '{U+0448}'
+stringdef shch '{U+0449}'
+stringdef soft '{U+044C}'
+stringdef y '{U+044B}'
+stringdef hard '{U+044A}'
+stringdef ee '{U+044D}'
+stringdef iu '{U+044E}'
+stringdef ia '{U+044F}'
+stringdef shva '{U+04D9}'
+stringdef gh '{U+0493}'
+stringdef khh '{U+049B}'
+stringdef nh '{U+04A3}'
+stringdef oe '{U+04E9}'
+stringdef uh '{U+04B1}'
+stringdef ii '{U+0456}'
+
+stringdef A '{U+0410}'
+stringdef B '{U+0411}'
+stringdef V '{U+0412}'
+stringdef G '{U+0413}'
+stringdef D '{U+0414}'
+stringdef E '{U+0415}'
+stringdef YO '{U+0401}'
+stringdef ZH '{U+0416}'
+stringdef Z '{U+0417}'
+stringdef I '{U+0418}'
+stringdef YI '{U+0419}'
+stringdef K '{U+041A}'
+stringdef L '{U+041B}'
+stringdef M '{U+041C}'
+stringdef N '{U+041D}'
+stringdef O '{U+041E}'
+stringdef P '{U+041F}'
+stringdef R '{U+0420}'
+stringdef S '{U+0421}'
+stringdef T '{U+0422}'
+stringdef U '{U+0423}'
+stringdef F '{U+0424}'
+stringdef KH '{U+0425}'
+stringdef TS '{U+0426}'
+stringdef CH '{U+0427}'
+stringdef SH '{U+0428}'
+stringdef SHCH '{U+0429}'
+stringdef SOFT '{U+042C}'
+stringdef Y '{U+042B}'
+stringdef HARD '{U+042A}'
+stringdef EE '{U+042D}'
+stringdef IU '{U+042E}'
+stringdef IA '{U+042F}'
+stringdef SHVA '{U+04D8}'
+stringdef GH '{U+0492}'
+stringdef KHH '{U+049A}'
+stringdef NH '{U+04A2}'
+stringdef OE '{U+04E8}'
+stringdef UH '{U+04B0}'
+stringdef II '{U+0406}'
+
+groupings ( )
+
+routines ( tolower step1 )
+
+backwardmode (
+    define tolower as (
+        repeat (
+          [substring] among (
+              '{A}' (<- '{a}')
+              '{B}' (<- '{b}')
+              '{V}' (<- '{v}')
+              '{G}' (<- '{g}')
+              '{D}' (<- '{d}')
+              '{E}' (<- '{e}')
+              '{YO}' (<- '{yo}')
+              '{ZH}' (<- '{zh}')
+              '{Z}' (<- '{z}')
+              '{I}' (<- '{i}')
+              '{YI}' (<- '{yi}')
+              '{K}' (<- '{k}')
+              '{L}' (<- '{l}')
+              '{M}' (<- '{m}')
+              '{N}' (<- '{n}')
+              '{O}' (<- '{o}')
+              '{P}' (<- '{p}')
+              '{R}' (<- '{r}')
+              '{S}' (<- '{s}')
+              '{T}' (<- '{t}')
+              '{U}' (<- '{u}')
+              '{F}' (<- '{f}')
+              '{KH}' (<- '{kh}')
+              '{TS}' (<- '{ts}')
+              '{CH}' (<- '{ch}')
+              '{SH}' (<- '{sh}')
+              '{SHCH}' (<- '{shch}')
+              '{SOFT}' (<- '{soft}')
+              '{Y}' (<- '{y}')
+              '{HARD}' (<- '{hard}')
+              '{EE}' (<- '{ee}')
+              '{IU}' (<- '{iu}')
+              '{IA}' (<- '{ia}')
+              '{SHVA}' (<- '{shva}')
+              '{GH}' (<- '{gh}')
+              '{KHH}' (<- '{khh}')
+              '{NH}' (<- '{nh}')
+              '{OE}' (<- '{oe}')
+              '{UH}' (<- '{uh}')
+              '{II}' (<- '{ii}')
+              '' (next)
+            )
+        )
+    )
+
+    define step1 as (
+        [substring] among (
+            '{sh}{a}{l}{y}{khh}' //шалық
+            '{sh}{e}{l}{ii}{k}' //шелік
+            '{d}{a}{gh}{a}{n}' //даған
+            '{d}{e}{g}{e}{n}' //деген
+            '{t}{a}{gh}{a}{n}' //таған
+            '{t}{e}{g}{e}{n}' //теген
+            '{l}{a}{gh}{a}{n}' //лаған
+            '{l}{e}{g}{e}{n}' //леген
+            '{d}{a}{yi}{y}{n}' //дайын
+            '{d}{e}{yi}{ii}{n}' //дейін
+            '{t}{a}{yi}{y}{n}' //тайын
+            '{t}{e}{yi}{ii}{n}' //тейін
+            '{nh}{d}{a}{r}' //ңдар
+            '{nh}{d}{e}{r}' //ңдер
+            '{d}{ii}{k}{ii}' //дікі
+            '{t}{ii}{k}{ii}' //тікі
+            '{n}{ii}{k}{ii}' //нікі
+            '{a}{t}{y}{n}' //атын
+            '{e}{t}{ii}{n}' //етін
+            '{yi}{t}{y}{n}' //йтын
+            '{yi}{t}{ii}{n}' //йтін
+            '{g}{e}{l}{ii}' //гелі
+            '{khh}{a}{l}{y}' //қалы
+            '{k}{e}{l}{ii}' //келі
+            '{gh}{a}{l}{y}' //ғалы
+            '{sh}{a}{m}{a}' //шама
+            '{sh}{e}{m}{e}' //шеме
+            '{m}{y}{n}' //мын
+            '{m}{ii}{n}' //мін
+            '{b}{y}{n}' //бын
+            '{b}{ii}{n}' //бін
+            '{p}{y}{n}' //пын
+            '{p}{ii}{n}' //пін
+            '{m}{y}{z}' //мыз
+            '{m}{ii}{z}' //міз
+            '{b}{y}{z}' //быз
+            '{b}{ii}{z}' //біз
+            '{p}{y}{z}' //пыз
+            '{p}{ii}{z}' //піз
+            '{s}{y}{nh}' //сың
+            '{s}{ii}{nh}' //сің
+            '{s}{y}{z}' //сыз
+            '{s}{ii}{z}' //сіз
+            '{nh}{y}{z}' //ңыз
+            '{nh}{ii}{z}' //ңіз
+            '{d}{a}{n}' //дан
+            '{d}{e}{n}' //ден
+            '{t}{a}{n}' //тан
+            '{t}{e}{n}' //тен
+            '{n}{a}{n}' //нан
+            '{n}{e}{n}' //нен
+            '{n}{d}{a}' //нда
+            '{n}{d}{e}' //нде
+            '{d}{y}{nh}' //дың
+            '{d}{ii}{nh}' //дің
+            '{t}{y}{nh}' //тың
+            '{t}{ii}{nh}' //тің
+            '{n}{y}{nh}' //ның
+            '{n}{ii}{nh}' //нің
+            '{d}{a}{r}' //дар
+            '{d}{e}{r}' //дер
+            '{t}{a}{r}' //тар
+            '{t}{e}{r}' //тер
+            '{l}{a}{r}' //лар
+            '{l}{e}{r}' //лер
+            '{b}{e}{n}' //бен
+            '{p}{e}{n}' //пен
+            '{m}{e}{n}' //мен
+            '{d}{a}{yi}' //дай
+            '{d}{e}{yi}' //дей
+            '{t}{a}{yi}' //тай
+            '{t}{e}{yi}' //тей
+            '{d}{y}{khh}' //дық
+            '{d}{ii}{k}' //дік
+            '{t}{y}{khh}' //тық
+            '{t}{ii}{k}' //тік
+            '{l}{y}{khh}' //лық
+            '{l}{ii}{k}' //лік
+            '{p}{a}{z}' //паз
+            '{gh}{y}{sh}' //ғыш
+            '{g}{ii}{sh}' //гіш
+            '{khh}{y}{sh}' //қыш
+            '{k}{ii}{sh}' //кіш
+            '{sh}{e}{k}' //шек
+            '{sh}{a}{khh}' //шақ
+            '{sh}{y}{l}' //шыл
+            '{sh}{ii}{l}' //шіл
+            '{n}{sh}{ii}' //нші
+            '{n}{sh}{y}' //ншы
+            '{d}{a}{p}' //дап
+            '{d}{e}{p}' //деп
+            '{t}{a}{p}' //тап
+            '{t}{e}{p}' //теп
+            '{l}{a}{p}' //лап
+            '{l}{e}{p}' //леп
+            '{d}{a}c' //даc
+            '{d}{e}c' //деc
+            '{t}{a}c' //таc
+            '{t}{e}c' //теc
+            '{l}{a}c' //лаc
+            '{l}{e}c' //леc
+            '{gh}{a}{r}' //ғар
+            '{g}{e}{r}' //гер
+            '{khh}{a}{r}' //қар
+            '{k}{e}{r}' //кер
+            '{d}{y}{r}' //дыр
+            '{d}{ii}{r}' //дір
+            '{t}{y}{r}' //тыр
+            '{t}{ii}{r}' //тір
+            '{gh}{y}{z}' //ғыз
+            '{g}{ii}{z}' //гіз
+            '{khh}{y}{z}' //қыз
+            '{k}{ii}{z}' //кіз
+            '{gh}{a}{n}' //ған
+            '{g}{e}{n}' //ген
+            '{khh}{a}{n}' //қан
+            '{k}{e}{n}' //кен
+            '{u}{sh}{y}' //ушы
+            '{u}{sh}{ii}' //уші
+            '{l}{a}{yi}' //лай
+            '{l}{e}{yi}' //лей
+            '{s}{y}{n}' //сын
+            '{s}{ii}{n}' //сін
+            '{b}{a}{khh}' //бақ
+            '{b}{e}{k}' //бек
+            '{p}{a}{khh}' //пақ
+            '{p}{e}{k}' //пек
+            '{m}{a}{khh}' //мақ
+            '{m}{e}{k}' //мек
+            '{yi}{y}{n}' //йын
+            '{yi}{ii}{n}' //йін
+            '{yi}{y}{khh}' //йық
+            '{yi}{ii}{k}' //йік
+            '{s}{y}' //сы
+            '{s}{ii}' //сі
+            '{d}{a}' //да
+            '{d}{e}' //де
+            '{t}{a}' //та
+            '{t}{e}' //те
+            '{gh}{a}' //ға
+            '{g}{e}' //ге
+            '{khh}{a}' //қа
+            '{k}{e}' //ке
+            '{n}{a}' //на
+            '{n}{e}' //не
+            '{d}{ii}' //ді
+            '{t}{y}' //ты
+            '{t}{ii}' //ті
+            '{n}{y}' //ны
+            '{n}{ii}' //ні
+            '{d}{y}' //ды
+            '{b}{a}' //ба
+            '{b}{e}' //бе
+            '{p}{a}' //па
+            '{p}{e}' //пе
+            '{m}{a}' //ма
+            '{m}{e}' //ме
+            '{l}{y}' //лы
+            '{l}{ii}' //лі
+            '{gh}{y}' //ғы
+            '{g}{ii}' //гі
+            '{khh}{y}' //қы
+            '{k}{ii}' //кі
+            '{a}{u}' //ау
+            '{e}{u}' //еу
+            '{l}{a}' //ла
+            '{l}{e}' //ле
+            '{a}{r}' //ар
+            '{e}{r}' //ер
+            '{y}{p}' //ып
+            '{ii}{p}' //іп
+            '{sh}{a}' //ша
+            '{sh}{e}' //ше
+            '{s}{a}' //са
+            '{s}{e}' //се
+            '{n}' //н
+            '{r}' //р
+            '{p}' //п
+            '{yi}' //й
+            '{y}' //ы
+            '{ii}' //і
+        )
+        delete
+    )
+)
+
+define stem as (
+    // We assume in this implementation that the whole word doesn't count
+    // as a valid suffix to remove, so we remove the longest suffix from
+    // the list which leaves at least one character.  This change affects
+    // 47 words out of the 65,140 in the sample vocabulary from Hindi
+    // wikipedia.
+    //
+    // The trick here is we use `next` in forward mode to advance the cursor
+    // to the second character, then `backwards` swaps the cursor and limit.
+    backwards (
+        do tolower
+        do step1
+    )
+)
